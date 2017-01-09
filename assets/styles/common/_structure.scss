@@ -10,7 +10,7 @@ body {
   }
 
   &.single-ondernemers {
-      padding-top: 136px;
+      padding-top: 106px;
   }
 }
 
@@ -24,6 +24,7 @@ body.single-ondernemers {
   background-color: $footer-background;
 }
 
-body.single-post {
+body.single-post,
+body.archive-ondernemers {
   background-color: $white;
 }

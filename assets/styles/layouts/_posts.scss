@@ -17,7 +17,7 @@
     top: 0;
     bottom: 0;
     z-index: 2;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
   }
 
   &.inverse {
@@ -91,11 +91,33 @@ ul.social-share {
       background-image: url('../../assets/images/sm-instagram-white.png');
     }
   }
+
+  &.turquoise {
+    li {
+      &.social-facebook a {
+        background-image: url('../../assets/images/sm-facebook-turq.png');
+      }
+      &.social-twitter a {
+        background-image: url('../../assets/images/sm-twitter-turq.png');
+      }
+      &.social-linkedin a {
+        background-image: url('../../assets/images/sm-linkedin-turq.png');
+      }
+      &.social-instagram a {
+        background-image: url('../../assets/images/sm-instagram-turq.png');
+      }
+    }
+  }
 }
 
 .post img {
   max-width: 100%;
 }
+
+/**
+ * Single Archive
+ * ---------------------------------------------------------------
+ */
 
 .archive-container .post {
   margin: 42px 0;
@@ -116,14 +138,30 @@ ul.social-share {
   }
 }
 
+/**
+ * Ondernemers Single
+ * ---------------------------------------------------------------
+ */
+
 .ondernemers-header {
   h1 {
     text-transform: uppercase;
     font-weight: 700;
   }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 300;
+    color: $brand-primary;
+  }
 }
 
 .ondernemers-container {
+  margin: 30px 0;
+
+  img {
+    max-width: 100%;
+  }
 
   .ondernemers {
     padding-top: 30px;
@@ -132,11 +170,104 @@ ul.social-share {
 
     @include border-radius(5px);
   }
+
+  .social-share {
+    margin: 20px 0;
+
+    li {
+    }
+  }
+}
+
+.ondernemers-footer {
+  .ondernemers-info {
+    margin-right: 20px;
+    font-weight: 500;
+
+    a {
+      color: $text-primary;
+      font-weight: 500;
+    }
+  }
 }
 
 .navigation-links {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 20px -35px;
   text-align: right;
+
+  .fa {
+    top: 2px;
+    position: relative;
+    margin: 0 4px;
+  }
+
+  a {
+    margin: 5px 10px;
+  }
 }
 
+.full-width-banner {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+
+  > .container {
+    position: relative;
+    height: 100%;
+  }
+
+  .ondernemer-banner-hero-container {
+    bottom: 20%;
+    right: 0;
+    position: absolute;
+  }
+
+  .ondernemer-banner-hero {
+    padding: 30px 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    @include border-radius(5px);
+
+    .ondernemer-type {
+      position: absolute;
+      height: 30px;
+      display: inline-block;
+      line-height: 30px;
+      padding: 0px 8px 2px 8px;
+      font-size: 14px;
+      text-transform: lowercase;
+
+      top: -60px;
+      left: 50px;
+      color: $white;
+      font-weight: 300;
+      background-color: $brand-primary;
+      @include border-top-radius( 5px);
+    }
+
+    .ondernemer-quote {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .ondernemer-function {
+      margin: 0;
+    }
+  }
+}
+
+.ondernemers-header {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.ondernemers-logo {
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    display: inline-block;
+  }
+}

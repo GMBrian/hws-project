@@ -22,6 +22,7 @@ function body_class( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', __NAMESPACE__ . '\\body_class' );
 
 /**
@@ -30,6 +31,7 @@ add_filter( 'body_class', __NAMESPACE__ . '\\body_class' );
 function excerpt_more() {
 	return '<p><a class="btn" href="' . get_permalink() . '">' . __( 'Artikel lezen', TEXT_DOMAIN ) . '</a></p>';
 }
+
 add_filter( 'excerpt_more', __NAMESPACE__ . '\\excerpt_more' );
 
 /**
@@ -43,15 +45,28 @@ function get_display_url( $full_url ) {
 
 	$display_url = '';
 
-	if (filter_var($full_url, FILTER_VALIDATE_URL)) {
+	if ( filter_var( $full_url, FILTER_VALIDATE_URL ) ) {
 
-		preg_match('^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$^', $full_url, $matches, PREG_OFFSET_CAPTURE);
+		preg_match( '^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$^', $full_url, $matches, PREG_OFFSET_CAPTURE );
 
 		return $matches[2][0];
 	}
 
 	return $display_url;
 }
+
+/**
+ * Maak het aantal posts in het ondernemersarchief oneindig
+ *
+ * @param $query
+ */
+function gm_modify_num_posts_for_ondernemers( $query ) {
+
+	if ( $query->is_main_query() && $query->is_post_type_archive( 'ondernemers' ) && ! is_admin() ) {
+		$query->set( 'posts_per_page', -1 );
+	}
+}
+add_action( 'pre_get_posts', __NAMESPACE__ . '\\gm_modify_num_posts_for_ondernemers' );
 
 /**
  * Disable all comments
@@ -66,6 +81,7 @@ function gm_disable_comments_post_types_support() {
 		}
 	}
 }
+
 add_action( 'admin_init', __NAMESPACE__ . '\\gm_disable_comments_post_types_support' );
 
 /**
@@ -73,7 +89,7 @@ add_action( 'admin_init', __NAMESPACE__ . '\\gm_disable_comments_post_types_supp
  */
 function get_banner_image() {
 	if ( has_post_thumbnail() ) {
-		return ' style="background-image:url(' . get_the_post_thumbnail_url() . ')"' ;
+		return ' style="background-image:url(' . get_the_post_thumbnail_url() . ')"';
 	}
 
 	return '';
@@ -84,6 +100,7 @@ function get_banner_image() {
 function gm_disable_comments_status() {
 	return false;
 }
+
 add_filter( 'comments_open', __NAMESPACE__ . '\\gm_disable_comments_status', 20, 2 );
 add_filter( 'pings_open', __NAMESPACE__ . '\\gm_disable_comments_status', 20, 2 );
 
@@ -93,12 +110,14 @@ function gm_disable_comments_hide_existing_comments( $comments ) {
 
 	return $comments;
 }
+
 add_filter( 'comments_array', __NAMESPACE__ . '\\gm_disable_comments_hide_existing_comments', 10, 2 );
 
 // Remove comments page in menu
 function gm_disable_comments_admin_menu() {
 	remove_menu_page( 'edit-comments.php' );
 }
+
 add_action( 'admin_menu', __NAMESPACE__ . '\\gm_disable_comments_admin_menu' );
 
 // Redirect any user trying to access comments page
@@ -109,12 +128,14 @@ function gm_disable_comments_admin_menu_redirect() {
 		exit;
 	}
 }
+
 add_action( 'admin_init', __NAMESPACE__ . '\\gm_disable_comments_admin_menu_redirect' );
 
 // Remove comments metabox from dashboard
 function gm_disable_comments_dashboard() {
 	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
 }
+
 add_action( 'admin_init', __NAMESPACE__ . '\\gm_disable_comments_dashboard' );
 
 // Remove comments links from admin bar
@@ -123,4 +144,5 @@ function gm_disable_comments_admin_bar() {
 		remove_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 60 );
 	}
 }
+
 add_action( 'init', __NAMESPACE__ . '\\gm_disable_comments_admin_bar' );

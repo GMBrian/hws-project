@@ -39,23 +39,4 @@
       @include border-radius(5px);
     }
   }
-
-  .widget_stayintouch_widget {
-    ul.social-share {
-      li {
-        &.social-facebook a {
-          background-image: url('../../assets/images/sm-facebook-turq.png');
-        }
-        &.social-twitter a {
-          background-image: url('../../assets/images/sm-twitter-turq.png');
-        }
-        &.social-linkedin a {
-          background-image: url('../../assets/images/sm-linkedin-turq.png');
-        }
-        &.social-instagram a {
-          background-image: url('../../assets/images/sm-instagram-turq.png');
-        }
-      }
-    }
-  }
 }

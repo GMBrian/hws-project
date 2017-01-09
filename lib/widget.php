@@ -98,7 +98,7 @@ class StayInTouch_Widget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-		echo '<ul class="social-share">';
+		echo '<ul class="social-share turquoise">';
 
 		echo get_field( 'facebook_url', 'options' ) ? '<li class="social-facebook"><a href="' .  get_field( 'facebook_url', 'options' ) . '" title="' . __( 'Deel op Facebook', TEXT_DOMAIN ) . '">' . __( 'Deel op Facebook', TEXT_DOMAIN ) . '</a></li>' : '';
 		echo get_field( 'twitter_url', 'options' ) ? '<li class="social-twitter"><a href="' .  get_field( 'twitter_url', 'options' ) . '" title="' . __( 'Deel op Twitter', TEXT_DOMAIN ) . '">' . __( 'Deel op Twitter', TEXT_DOMAIN ) . '</a></li>' : '';
