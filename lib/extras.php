@@ -33,6 +33,27 @@ function excerpt_more() {
 add_filter( 'excerpt_more', __NAMESPACE__ . '\\excerpt_more' );
 
 /**
+ * Maak van een complete URL een nette leesbare voor op de frontend
+ *
+ * @param $full_url
+ *
+ * @return $display_url
+ */
+function get_display_url( $full_url ) {
+
+	$display_url = '';
+
+	if (filter_var($full_url, FILTER_VALIDATE_URL)) {
+
+		preg_match('^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$^', $full_url, $matches, PREG_OFFSET_CAPTURE);
+
+		return $matches[2][0];
+	}
+
+	return $display_url;
+}
+
+/**
  * Disable all comments
  */
 // Disable support for comments and trackbacks in post types
@@ -57,6 +78,7 @@ function get_banner_image() {
 
 	return '';
 }
+
 
 // Close comments on the front-end
 function gm_disable_comments_status() {

@@ -8,6 +8,10 @@ body {
   &.home {
     padding-top: 0;
   }
+
+  &.single-ondernemers {
+      padding-top: 136px;
+  }
 }
 
 .container {
@@ -15,7 +19,8 @@ body {
 }
 
 body.blog,
-body.archive {
+body.archive,
+body.single-ondernemers {
   background-color: $footer-background;
 }
 
