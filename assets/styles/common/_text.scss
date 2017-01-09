@@ -1,0 +1,103 @@
+/**
+ * Styling for text, fonts and markup
+ */
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-Thin.otf');
+  font-weight: 200; // Thin
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-ThinItalic.otf');
+  font-weight: 200; // Thin
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-Book.otf');
+  font-weight: 300; // Book
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-BookItalic.otf');
+  font-weight: 300; // Book
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-Medium.otf');
+  font-weight: 500; // Medium
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-Medium.otf');
+  font-weight: 500; // Medium
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-Bold.otf');
+  font-weight: 700; // Bold
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-BoldItalic.otf');
+  font-weight: 700; // Bold
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-Black.otf');
+  font-weight: 900; // Bold
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url('../../assets/fonts/Gotham-BlackItalic.otf');
+  font-weight: 900; // Bold
+  font-style: italic;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Gotham", sans-serif;
+  font-weight: 500;
+}
+
+p,
+ul,
+ol,
+a,
+span {
+  font-family: "Gotham", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 28px;
+}
+
+p {
+  margin: 30px 0;
+}
+
+a:focus, a:hover {
+  color: darken($brand-primary, 10%);
+  text-decoration: none;
+}
+
+abbr[title] {
+  text-decoration: none;
+}

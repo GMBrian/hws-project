@@ -1,0 +1,129 @@
+.footer {
+  background-color: $footer-background;
+}
+
+.footer .widget h3 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.footer-follow {
+  height: 77px;
+  margin-top: 60px;
+  color: $white;
+  background-color: $socket-background;
+
+  .follow-us {
+    display: inline-block;
+    margin: 0;
+    padding: 18px 0;
+    height: 41px;
+    line-height: 41px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .container {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 62px;
+      width: 78px;
+      top: -62px;
+      right: 200px;
+      display: block;
+      background-image: url(../../assets/images/ic-train.png);
+    }
+  }
+}
+
+.footer-social-share-container {
+  display: block;
+  text-align: center;
+
+  ul.social-share {
+    display: inline-block;
+    margin: 24px 0;
+    height: 29px;
+    line-height: 17px;
+    //display: inline-block;
+  }
+}
+
+.footer-info {
+  margin-top: 50px;
+  margin-bottom: 20px;
+
+  p {
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  a {
+    font-size: 14px;
+    line-height: 22px;
+    color: $text-primary;
+
+    &:hover {
+      color: darken($text-primary, 25%);
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+
+    li {
+      padding-left: 20px;
+      position: relative;
+
+      a {
+        padding: 6px 0;
+        line-height: 34px;
+      }
+
+      &:before {
+        position: absolute;
+        top: 3px;
+        left: 4px;
+        content: "\f0da";
+        color: $brand-primary;
+        font-family: 'FontAwesome', sans-serif;
+      }
+    }
+  }
+
+  iframe {
+    border: 1px solid #cbcac6 !important;
+  }
+}
+
+.footer-copyright {
+  text-align: center;
+  border-top: 2px $footer-divider solid;
+  padding: 10px 0;
+
+  p {
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  a {
+    color: $text-primary;
+    font-size: 14px;
+
+    &:hover {
+      color: darken($text-primary, 25%);
+    }
+  }
+
+  .footer-divider {
+    margin: 0 10px;
+  }
+}

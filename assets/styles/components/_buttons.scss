@@ -1,0 +1,26 @@
+.btn {
+  background-color: $brand-primary;
+  color: $white;
+  font-weight: 300;
+  padding: 13px 18px;
+
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: $white;
+    background-color: darken($brand-primary, 5%);
+  }
+
+  &.btn-text {
+    color: $brand-primary;
+    padding: 13px 0;
+    margin: 0 18px;
+    font-weight: 500;
+    background: url(../../assets/images/dashed-brand-color.png) repeat-x transparent bottom;
+
+    &:hover {
+      color: darken($brand-primary, 5%);
+    }
+  }
+}

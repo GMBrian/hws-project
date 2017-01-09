@@ -1,0 +1,12 @@
+{
+  "name": "sage",
+  "homepage": "https//het-werkstation.nl",
+  "authors": [
+    "Brian de Geus <brian@geusmedia.>"
+  ],
+  "license": "R",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.4"
+  }
+}

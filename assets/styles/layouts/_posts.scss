@@ -1,0 +1,141 @@
+/**
+ * Styling for posts. Single and archive
+ */
+
+.post-banner {
+  min-height: 308px;
+  position: relative;
+  z-index: 1;
+  background-position: center;
+
+  &:before {
+    display: block;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,.5);
+  }
+
+  &.inverse {
+    background-color: $socket-background;
+
+    .entry-title {
+      padding: 60px 0 0;
+      color: $white;
+      text-align: center;
+      z-index: 10;
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    .entry-meta,
+    .entry-meta a {
+      color: $white;
+      text-align: center;
+      z-index: 10;
+      position: relative;
+    }
+  }
+}
+
+.social-share-container {
+  position: relative;
+  z-index: 10;
+
+  p.social-cta {
+    text-align: center;
+    color: $white;
+    margin: 20px 0;
+  }
+}
+
+ul.social-share {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    height: 29px;
+    width: 29px;
+    margin: 0 10px;
+
+    a {
+      @include hide-text;
+
+      display: inline-block;
+      height: 29px;
+      width: 29px;
+      background-repeat: no-repeat;
+    }
+
+    &.social-facebook a {
+      background-image: url('../../assets/images/sm-facebook-white.png');
+    }
+
+    &.social-twitter a {
+      background-image: url('../../assets/images/sm-twitter-white.png');
+    }
+
+    &.social-linkedin a {
+      background-image: url('../../assets/images/sm-linkedin-white.png');
+    }
+
+    &.social-instagram a {
+      background-image: url('../../assets/images/sm-instagram-white.png');
+    }
+  }
+}
+
+.post img {
+  max-width: 100%;
+}
+
+.archive-container .post {
+  margin: 42px 0;
+  padding: 35px 0;
+  background-color: $white;
+
+  @include border-radius(5px);
+
+  .entry-title a {
+    color: $text-primary;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  img {
+    @include border-radius(5px);
+  }
+}
+
+body.single-post .entry-content {
+  //position: relative;
+  //min-height: 1px;
+  //padding-right: 35px;
+  //padding-left: 35px;
+  //width: 100%;
+}
+
+@media (min-width: 544px) {
+  //.sidebar-primary .main {
+  //  -webkit-box-flex: 0;
+  //  -ms-flex: 0 0 100%;
+  //  flex: 0 0 100%;
+  //  max-width: 100%;
+  //}
+  //
+  //.entry-content {
+  //  -webkit-box-flex: 0;
+  //  -ms-flex: 0 0 75%;
+  //  flex: 0 0 75%;
+  //  max-width: 75%;
+  //}
+}

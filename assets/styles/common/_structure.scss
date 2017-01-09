@@ -1,0 +1,24 @@
+/**
+ * Styling for the base structure of the website
+ */
+
+body {
+  padding-top: 76px;
+
+  &.home {
+    padding-top: 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+}
+
+body.blog,
+body.archive {
+  background-color: $footer-background;
+}
+
+body.single-post {
+  background-color: $white;
+}

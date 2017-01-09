@@ -1,0 +1,31 @@
+// Grid system
+.main {
+  @include make-col-ready();
+  @include media-breakpoint-up(sm) {
+    @include make-col($main-sm-columns);
+    .sidebar-primary & {
+      @include make-col($main-sm-columns - $sidebar-sm-columns);
+    }
+  }
+}
+.sidebar {
+  @include make-col-ready();
+  @include media-breakpoint-up(sm) {
+    @include make-col($sidebar-sm-columns);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 544px) {
+  .sidebar-primary .main {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
