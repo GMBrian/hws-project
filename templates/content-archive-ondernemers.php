@@ -38,7 +38,7 @@ use Roots\Sage\Extras;
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<div class="col-md-4 ondernemers-logo">
+				<div class="col-md-2 offset-lg-1 push-lg-1 ondernemers-logo">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<a href="<?= get_the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 							<img src="<?php the_post_thumbnail_url( 'medium' ); ?>"/>

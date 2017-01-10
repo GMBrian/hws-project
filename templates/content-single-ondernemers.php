@@ -50,7 +50,7 @@ use Roots\Sage\Extras;
 				echo '<a href="' . get_permalink( $next_post->ID ) . '"><i class="fa fa-chevron-left"></i> ' . __( 'vorige', TEXT_DOMAIN ) . '</a>';
 			}
 			?>
-			<a href="#"><?= __( 'overzicht', TEXT_DOMAIN ); ?></a>
+			<a href="<?= get_post_type_archive_link( 'ondernemers' ); ?>"><?= __( 'overzicht', TEXT_DOMAIN ); ?></a>
 			<?php
 			$previous_post = get_previous_post();
 			if ( ! empty( $previous_post ) ) {

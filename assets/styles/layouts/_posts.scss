@@ -139,7 +139,7 @@ ul.social-share {
 }
 
 /**
- * Ondernemers Single
+ * Ondernemers Single & Archive
  * ---------------------------------------------------------------
  */
 
@@ -147,6 +147,7 @@ ul.social-share {
   h1 {
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 36px;
   }
 
   h4 {
@@ -203,6 +204,12 @@ ul.social-share {
 
   a {
     margin: 5px 10px;
+  }
+}
+
+.post-type-archive-ondernemers {
+  .archive-container {
+    margin-bottom: 62px;
   }
 }
 
@@ -267,6 +274,7 @@ ul.social-share {
   text-align: center;
 
   img {
+    //width: 100px;
     max-width: 100%;
     display: inline-block;
   }
