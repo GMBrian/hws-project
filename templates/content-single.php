@@ -6,6 +6,8 @@ use Roots\Sage\Extras;
 
 ?>
 
+<?php get_template_part( 'templates/navbar' ); ?>
+
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class(); ?>>
 		<header class="post-banner inverse" <?= Extras\get_banner_image(); ?>>

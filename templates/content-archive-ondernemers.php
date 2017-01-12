@@ -23,7 +23,6 @@ use Roots\Sage\Extras;
 			</div>
 		</div>
 	</div>
-
 </div>
 
 <div class="container row">

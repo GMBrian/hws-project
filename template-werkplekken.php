@@ -4,4 +4,4 @@
  */
 ?>
 
-<?php get_template_part('templates/content', 'werkplekken'); ?>
+<?php get_template_part('templates/content-template', 'werkplekken'); ?>

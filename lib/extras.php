@@ -95,7 +95,17 @@ function get_banner_image() {
 	return '';
 }
 
+/**
+ * TinyMCE button
+ * ------------------------------------------------------------------------------
+ */
 
+
+
+/**
+ * Haal een afbeelding op voor de banner
+ * ------------------------------------------------------------------------------
+ */
 // Close comments on the front-end
 function gm_disable_comments_status() {
 	return false;

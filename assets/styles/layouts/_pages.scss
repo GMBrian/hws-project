@@ -188,3 +188,68 @@
     text-align: center;
   }
 }
+
+/**
+ * Uitgebreide Banner Template
+ * ---------------------------------------------------------------
+ */
+
+body.page-template-template-banner {
+
+}
+
+.advanced-banner-header {
+  position: relative;
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  &:before {
+    display: block;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba($banner-background, 0.7);
+  }
+
+  > .row {
+    position: relative;
+    z-index: 3;
+  }
+
+  .advanced-banner-property {
+    margin: 0 5px;
+
+    i {
+      margin: 0 5px;
+      font-size: 18px;
+    }
+  }
+
+  h1,
+  p {
+    text-align: center;
+    color: $white;
+  }
+
+  .entry-title {
+    margin: 10px 0;
+  }
+  p {
+    margin: 10px 0;
+  }
+
+  .advanced-banner-description {
+    margin: 20px 0;
+  }
+
+  .advanced-banner-description p {
+    font-size: 18px;
+  }
+}

@@ -147,3 +147,19 @@ function assets() {
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100 );
+
+//function my_acf_google_map_api( $api ){
+//
+//	$api['key'] = 'AIzaSyDj-rTjsnhC5RLxK9Arf9vRafzaNr7o-x0';
+//
+//	return $api;
+//
+//}
+//add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+function my_acf_init() {
+	acf_update_setting( 'google_api_key', 'AIzaSyDj-rTjsnhC5RLxK9Arf9vRafzaNr7o-x0' );
+}
+add_action( 'acf/init', __NAMESPACE__ . '\\my_acf_init' );
+
+include_once( __DIR__ . '/../assets/acf-fonticonpicker/acf-fonticonpicker.php' );

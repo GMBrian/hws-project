@@ -55,17 +55,10 @@ use Roots\Sage\Extras;
 				</div>
 			</div>
 		</div>
-		<div class="main">
+		<div class="main-sections">
 
 			<?php get_template_part( 'templates/page-sections' ); ?>
-
-			<div class="container">
-				<div class="row entry-content">
-					<div class="col-md-12">
-						<?php //the_content(); ?>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</article>
 <?php endwhile; ?>

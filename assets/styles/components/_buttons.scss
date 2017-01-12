@@ -23,4 +23,8 @@
       color: darken($brand-primary, 5%);
     }
   }
+
+  > i.fa:last-child {
+    margin-left: 12px;
+  }
 }
