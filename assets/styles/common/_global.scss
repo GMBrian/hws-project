@@ -7,27 +7,27 @@
   float: right;
 }
 .float-left {
-  float: left;
+  float: left !important;
 }
 .float-none {
-  float: none;
+  float: none !important;
 }
 .clear {
-  clear: both;
+  clear: both !important;
 }
 // Text alignment
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 // Apply capital case to an element
 .caps {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 hr {
@@ -48,4 +48,28 @@ hr.dotted {
 // Mixins
 @mixin hide-text {
   font-size: 0;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
 }

@@ -29,7 +29,7 @@ add_filter( 'body_class', __NAMESPACE__ . '\\body_class' );
  * Clean up the_excerpt()
  */
 function excerpt_more() {
-	return '<p><a class="btn" href="' . get_permalink() . '">' . __( 'Artikel lezen', TEXT_DOMAIN ) . '</a></p>';
+	return '<a class="btn btn-excerpt-more" href="' . get_permalink() . '">' . __( 'Artikel lezen', TEXT_DOMAIN ) . '</a>';
 }
 
 add_filter( 'excerpt_more', __NAMESPACE__ . '\\excerpt_more' );
@@ -92,7 +92,7 @@ function get_banner_image() {
 		return ' style="background-image:url(' . get_the_post_thumbnail_url() . ')"';
 	}
 
-	return '';
+	return ' style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/images/img-post-banner.jpg)"';
 }
 
 /**

@@ -127,7 +127,7 @@ function display_sidebar() {
 		// @link https://codex.wordpress.org/Conditional_Tags
 		is_404(),
 		is_front_page(),
-		is_page_template( 'template-custom.php' )
+		is_page()
 	] );
 
 	return apply_filters( 'sage/display_sidebar', $display );
@@ -148,6 +148,10 @@ function assets() {
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100 );
 
+
+/**
+ * ACF Google Maps key
+ */
 //function my_acf_google_map_api( $api ){
 //
 //	$api['key'] = 'AIzaSyDj-rTjsnhC5RLxK9Arf9vRafzaNr7o-x0';
@@ -157,9 +161,16 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100 );
 //}
 //add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
+
+/**
+ * ACF Google Maps key voor PRO
+ */
 function my_acf_init() {
 	acf_update_setting( 'google_api_key', 'AIzaSyDj-rTjsnhC5RLxK9Arf9vRafzaNr7o-x0' );
 }
 add_action( 'acf/init', __NAMESPACE__ . '\\my_acf_init' );
+
+// Enable visibility option for labels in Gravity Forms
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
 include_once( __DIR__ . '/../assets/acf-fonticonpicker/acf-fonticonpicker.php' );

@@ -6,6 +6,36 @@
     @include border-radius(5px);
   }
 
+  &.section-flexwerkplek_opties {
+    .flexwerk-optie {
+      text-align: center;
+
+      .flexwerk-icon {
+        display: inline-block;
+      }
+      .ticket-title {
+        color: $text-primary;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 28px;
+        margin: 15px 0 5px;
+      }
+      .ticket-subtitle {
+        margin: 5px 0;
+        line-height: 18px;
+      }
+      .ticket-price {
+        color: $brand-primary;
+        margin: 2px 0 5px;
+        line-height: 18px;
+      }
+    }
+
+    .flexwerk-btn {
+      margin: 20px auto 0;
+    }
+  }
+
   &.section-call_to_action {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -30,6 +60,16 @@
       bottom: 0;
       z-index: 2;
       background-color: rgba(255, 255, 255, .5);
+    }
+
+    &.background-tint-dark {
+      .cta-header {
+        color: $white;
+      }
+
+      &:before {
+        background-color: rgba(0, 0, 0, .5);
+      }
     }
 
     .cta-container {

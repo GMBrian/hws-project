@@ -18,17 +18,91 @@ body {
   margin: 0 auto;
 }
 
+.wrap {
+  background-color: $white;
+}
+
 body.blog,
 body.archive,
 body.single-ondernemers {
   background-color: $footer-background;
+
+  .wrap {
+    background-color: $footer-background;
+  }
 }
 
 body.single-post,
 body.archive-ondernemers {
   background-color: $white;
+
+  .wrap {
+    background-color: $white;
+  }
 }
 
 img {
   max-width: 100%;
+}
+
+/**
+ * Overige elementen
+ * ---------------------------------------------------------------
+ */
+
+ul.social-share {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    height: 29px;
+    width: 29px;
+    margin: 0 10px;
+
+    a {
+      @include hide-text;
+
+      display: inline-block;
+      height: 29px;
+      width: 29px;
+      background-repeat: no-repeat;
+    }
+
+    &.social-facebook a {
+      background-image: url('../../assets/images/sm-facebook-white.png');
+    }
+
+    &.social-twitter a {
+      background-image: url('../../assets/images/sm-twitter-white.png');
+    }
+
+    &.social-linkedin a {
+      background-image: url('../../assets/images/sm-linkedin-white.png');
+    }
+
+    &.social-instagram a {
+      background-image: url('../../assets/images/sm-instagram-white.png');
+    }
+  }
+
+  &.turquoise {
+    li {
+      &.social-facebook a {
+        background-image: url('../../assets/images/sm-facebook-turq.png');
+      }
+      &.social-twitter a {
+        background-image: url('../../assets/images/sm-twitter-turq.png');
+      }
+      &.social-linkedin a {
+        background-image: url('../../assets/images/sm-linkedin-turq.png');
+      }
+      &.social-instagram a {
+        background-image: url('../../assets/images/sm-instagram-turq.png');
+      }
+    }
+  }
 }

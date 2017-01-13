@@ -69,8 +69,8 @@ if ( have_rows( 'secties' ) ):
 
 			$background_image = get_sub_field( 'achtergrond' ) && strlen( get_sub_field( 'achtergrond' ) ) ? get_sub_field( 'achtergrond' ) : get_stylesheet_directory_uri() . '/assets/images/call-to-action_fallback.png';
 
-			echo '<div class="section section-' . get_row_layout() . ' full-width-container" style="background-image:url(' . $background_image . ')">';
-
+			echo '<div class="section section-' . get_row_layout() . ' full-width-container background-tint-' . get_sub_field( 'tint' ) . '" style="background-image:url(' . $background_image . ')">';
+			echo '<div class="container">';
 			echo '<div class="cta-container">';
 
 			echo '<h3 class="cta-header">' . get_sub_field( 'tekst' ) . '</h3>';
@@ -80,6 +80,46 @@ if ( have_rows( 'secties' ) ):
 			}
 
 			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+
+		elseif ( get_row_layout() == 'flexwerkplek_opties' ):
+
+			echo '<div class="section section-' . get_row_layout() . ' full-width-container background-color-' . get_sub_field( 'achtergrondkleur' ) . '">';
+
+			if ( have_rows( 'opties' ) ) :
+
+				echo '<div class="container-fluid">';
+				echo '<div class="row entry-content flexwerk-container">';
+
+				$flex_counter = 0;
+
+				while ( have_rows( 'opties' ) ) : the_row();
+
+					echo '<div class="' . ( $flex_counter == 0 ? 'offset-lg-1' : '' ) . ' col-lg-2 col-md-12 col-sm-12 flexwerk-optie">';
+					?>
+					<img class="flexwerk-icon"
+					     src="<?= get_stylesheet_directory_uri() . '/assets/images/ticket-' . get_sub_field( 'icoon' ) . '.png'; ?>">
+					<?= get_sub_field( 'titel' ) ? '<h4 class="ticket-title">' . get_sub_field( 'titel' ) . '</h4>' : ''; ?>
+					<?= get_sub_field( 'ondertitel' ) ? '<p class="ticket-subtitle">' . get_sub_field( 'ondertitel' ) . '</p>' : ''; ?>
+					<?= get_sub_field( 'prijs' ) ? '<p class="ticket-price">' . get_sub_field( 'prijs' ) . '</p>' : ''; ?>
+					<?php
+
+					echo '</div>';
+
+					$flex_counter ++;
+
+				endwhile;
+
+				if ( get_sub_field( 'knop_toevoegen' ) ) {
+					echo '<a class="btn flexwerk-btn" href="' . get_sub_field( 'knop_bestemming' ) . '">' . get_sub_field( 'knop_tekst' ) . ' <i class="fa fa-long-arrow-right"></i></a>';
+				}
+
+				echo '</div>';
+				echo '</div>';
+
+			endif;
+
 			echo '</div>';
 
 		elseif ( get_row_layout() == 'usps' ):
@@ -118,14 +158,61 @@ if ( have_rows( 'secties' ) ):
 			echo '</div>';
 
 		elseif ( get_row_layout() == 'ondernemers' ):
-		?>
-			<div class="row entry-content business-container">
-				<div class="col-sm-12 business-header">
-					<h2><?= __( 'Worden dit jouw buren?', TEXT_DOMAIN ); ?></h2>
-					<h4><?= __( 'Laat je inspireren door andere ondernemers', TEXT_DOMAIN ); ?></h4>
+
+			$ondernemers = [ ];
+			?>
+			<div class="container-fluid">
+				<div class="row entry-content business-container">
+					<div class="col-sm-12 business-header">
+						<h2><?= __( 'Worden dit jouw buren?', TEXT_DOMAIN ); ?></h2>
+						<h4><?= __( 'Laat je inspireren door andere ondernemers', TEXT_DOMAIN ); ?></h4>
+					</div>
+					<?php if ( get_sub_field( 'Handmatige selectie' ) ) {
+
+						$ondernemers = get_sub_field( 'ondernemers_selecteren' );
+
+						//print_r( $ondernemers );
+
+						foreach ( $ondernemers as $ondernemer ) {
+							echo '<div class="col-md-2 col-sm-6">';
+
+							echo '<img src="' . get_the_post_thumbnail_url( $ondernemer->ID, 'medium' ) . '">';
+
+							echo '</div>';
+						}
+
+					} else {
+
+						$args = [
+							'post_type'      => 'ondernemers',
+							'orderby'        => 'rand',
+							'posts_per_page' => 6,
+						];
+
+						$ondernemers = get_posts( $args );
+
+						//print_r( $ondernemers );
+
+						foreach ( $ondernemers as $ondernemer ) {
+							echo '<div class="col-md-2 col-sm-6">';
+
+							echo '<img src="' . get_the_post_thumbnail_url( $ondernemer->ID, 'medium' ) . '">';
+
+							echo '</div>';
+						}
+
+					} ?>
+
+					<div class="col-sm-12">
+						<div>
+							<?php foreach ( $ondernemers as $ondernemer ) {
+								echo '<div class="">' . $ondernemer->post_content . '</div>';
+							} ?>
+						</div>
+					</div>
 				</div>
 			</div>
-		<?php
+			<?php
 		endif;
 
 	endwhile;

@@ -1,4 +1,41 @@
-// Search form
+// Extend these on your inputs
+.input-field {
+  width: 100%;
+  border: 1px solid $placeholder-primary;
+  padding: 8px 16px;
+  font-weight: 300;
+
+  @include border-radius(5px);
+
+  @include placeholder {
+    color: $placeholder-primary;
+    font-size: 15px;
+    font-weight: 300;
+  }
+}
+
+.icon-field-container {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 20px;  // Maybe you need to change the size too (some icons seem bigger)
+    content: "\f007"; // Override this property on your iconfield
+    color: $placeholder-primary;
+    font-family: FontAwesome,sans-serif;
+  }
+
+  input {
+    padding-left: 42px !important;
+  }
+}
+
+/**
+ * Search Form
+ * ----------------------------------------
+ */
 .search-form {
   @extend .form-inline;
 }
@@ -12,4 +49,80 @@
 .search-form .search-submit {
   @extend .btn;
   @extend .btn-secondary;
+}
+
+input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+  @extend .input-field;
+}
+
+input[type="submit"] {
+  @extend .btn;
+  width: 100%;
+}
+
+/**
+ * Gravity Forms
+ * ----------------------------------------
+ */
+
+.field-name .ginput_container {
+  @extend .icon-field-container;
+
+  &:before {
+    content: "\f007";
+  }
+}
+
+.field-email .ginput_container {
+  @extend .icon-field-container;
+
+  &:before {
+    font-size: 16px;
+    content: "\f0e0";
+  }
+}
+
+.top_label input.medium,
+.top_label select.medium {
+  width: 100%;
+}
+
+html body .gform_wrapper {
+  input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  textarea {
+    @extend .input-field;
+  }
+
+  li.hidden_label input {
+    margin-top: 0;
+  }
+
+  .hidden_label label {
+    display: none !important;
+  }
+
+  .top_label div.ginput_container {
+    margin-top: 0;
+  }
+
+  .gform_footer {
+    margin: 0;
+  }
+
+  .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit],
+  .gform_wrapper .gform_page_footer input.button,
+  .gform_wrapper .gform_page_footer input[type=submit],
+  input[type="submit"] {
+    width: 100%;
+  }
+}
+.gform_confirmation_wrapper {
+  font-family: "Gotham", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border: 1px solid $brand-primary;
+  color: $brand-primary;
+  background-color: $brand-light;
 }

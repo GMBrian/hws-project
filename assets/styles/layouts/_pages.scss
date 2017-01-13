@@ -253,3 +253,27 @@ body.page-template-template-banner {
     font-size: 18px;
   }
 }
+
+
+/**
+ * Uitgebreide Contactpagina Template
+ * ---------------------------------------------------------------
+ */
+
+body.page-template-template-contact {
+  background-color: $footer-background;
+  padding-top: 120px;
+
+  .wrap {
+    background-color: $footer-background;
+    margin-bottom: 70px;
+  }
+}
+
+.contact-left-section {
+  border-right: 2px solid $white;
+}
+
+.contact-right-section {
+  border-right: 2px solid $white;
+}

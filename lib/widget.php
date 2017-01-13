@@ -31,7 +31,7 @@ class JoinUs_Widget extends WP_Widget {
 		// This is where you run the code and display the output
 		echo '<p>' . __( 'Een flexibele werkplek huren bij het werkstation. Van een flexplek tot een kantoorunit.', TEXT_DOMAIN ) . '</p>';
 
-		echo '<p><a href="#" class="btn">' . __( 'Rondleiding', TEXT_DOMAIN ) . ' <i class="fa fa-long-arrow-right"></i></a></p>';
+		echo '<p><a href="' . get_field( 'rondleiding', 'options' ) . '" class="btn">' . __( 'Rondleiding', TEXT_DOMAIN ) . ' <i class="fa fa-long-arrow-right"></i></a></p>';
 
 		echo $args['after_widget'];
 	}
