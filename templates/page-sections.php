@@ -266,6 +266,7 @@ if ( have_rows( 'secties' ) ):
 						<?= get_sub_field( 'blok_4_tekst' ) ? '<p>' . get_sub_field( 'blok_4_tekst' ) . '</p>' : ''; ?>
 						<?= get_sub_field( 'blok_4_knop_titel' ) ? '<a class="btn btn-text" href="' . get_sub_field( 'blok_4_knop_link' ) . '">' . get_sub_field( 'blok_4_knop_titel' ) . ' <i
 								class="fa fa-long-arrow-right"></i></a>' : ''; ?>
+						
 					</div>
 				</div>
 			</div>
