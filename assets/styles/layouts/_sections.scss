@@ -6,6 +6,7 @@
     @include border-radius(5px);
   }
 
+  // Flexwerk
   &.section-flexwerkplek_opties {
     .flexwerk-optie {
       text-align: center;
@@ -36,6 +37,7 @@
     }
   }
 
+  // CTA
   &.section-call_to_action {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -48,7 +50,11 @@
     z-index: 1;
 
     text-align: center;
-    display: table;
+
+    > .container {
+      height: 100%;
+      display: table;
+    }
 
     &:before {
       display: block;
@@ -89,6 +95,122 @@
     .cta-btn {
       position: relative;
       z-index: 3;
+    }
+  }
+
+  // Ondernemers
+  &.section-ondernemers {
+
+    .section-ondernemers-container {
+      text-align: center;
+    }
+
+    .section-ondernemers-header {
+      margin: 30px 0;
+
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 36px;
+      }
+      h4 {
+        color: $brand-primary;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: center;
+      }
+    }
+
+    .section-ondernemers-image {
+      img {
+        max-height: 50px;
+        height: auto;
+        width: auto;
+        margin: 20px auto;
+        display: inline-block;
+        filter: grayscale(100%);
+      }
+
+      > a {
+        position: relative;
+        height: 90px;
+        display: block;
+        margin: 10px 0;
+
+        img {
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          margin: 0;
+        }
+
+        &:before {
+          visibility: hidden;
+          opacity: 0;
+          transition: visibility 0s, opacity 0.7s linear;
+        }
+      }
+
+      > a.selected {
+
+        &:before {
+          bottom: -10px;
+          left: 50%;
+          margin-left: -30px;
+          content: '';
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border: 30px solid transparent;
+          border-bottom-color: $footer-background;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    .section-ondernemers-text-container {
+      background-color: $footer-background;
+      padding: 35px 45px;
+
+      @include border-radius(5px);
+    }
+
+    ul.section-ondernemers-text-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 0;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: visibility 0s, opacity 0.7s linear, height 0.5s linear;
+
+        &.selected {
+          height: auto;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        p.section-ondernemers-title {
+          margin: 20px 0 5px;
+          font-size: 18px;
+        }
+
+        p.section-ondernemers-subtitle {
+          margin: 5px 0 0;
+          font-size: 15px;
+          color: $brand-primary;
+        }
+      }
+    }
+
+    .section-ondernemers-more {
+      margin: 20px auto;
     }
   }
 }

@@ -51,66 +51,6 @@
   }
 }
 
-.business-header {
-  margin: 30px 0;
-
-  h2 {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 36px;
-  }
-  h4 {
-    color: $brand-primary;
-    font-size: 18px;
-    font-weight: 300;
-    text-align: center;
-  }
-}
-
-.carousel img {
-  //height: auto;
-  //max-width: 100%;
-}
-
-.carousel {
-  .item .col-xs-4 {
-    float: left;
-  }
-  .carousel-inner {
-    > .item {
-      transition: 500ms ease-in-out left;
-    }
-    .active {
-      &.left {
-        left: -33%;
-      }
-      &.right {
-        left: 33%;
-      }
-    }
-    .next {
-      left: 33%;
-    }
-    .prev {
-      left: -33%;
-    }
-    @media all {
-      > .item {
-        // use your favourite prefixer here
-        transition: 500ms ease-in-out all;
-        backface-visibility: visible;
-        transform: none !important;
-      }
-    }
-  }
-  .carouse-control {
-    &.left, &.right {
-      background-image: none;
-    }
-  }
-}
-
 .section-socket {
   background-color: $footer-background;
 }
@@ -271,9 +211,9 @@ body.page-template-template-contact {
 }
 
 .contact-left-section {
-  border-right: 2px solid $white;
+  border-right: 1px solid $white;
 }
 
 .contact-right-section {
-  border-right: 2px solid $white;
+  border-left: 1px solid $white;
 }

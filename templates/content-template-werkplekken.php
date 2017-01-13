@@ -26,6 +26,7 @@ use Roots\Sage\Extras;
 						<?= get_the_content(); ?>
 					</div>
 					<div class="col-md-4 werkplek-blok werkplek-blok-1">
+						<?= get_field( 'blok_1_link' ) ? '<a href="' . get_field( 'blok_1_link' ) . '">' : ''; ?>
 						<div
 							class="werkplek-blok-container" <?= get_field( 'blok_1_afbeelding' ) ? 'style="background-image:url(' . get_field( 'blok_1_afbeelding' ) . ')"' : ''; ?>>
 							<div class="werkplek-blok-inner-container">
@@ -33,8 +34,10 @@ use Roots\Sage\Extras;
 								<?= get_field( 'blok_1_tekst' ) ? '<p class="werkplek-blok-text">' . get_field( 'blok_1_tekst' ) . '</p>' : ''; ?>
 							</div>
 						</div>
+						<?= get_field( 'blok_1_link' ) ? '</a>' : ''; ?>
 					</div>
 					<div class="col-md-4 werkplek-blok werkplek-blok-2">
+						<?= get_field( 'blok_2_link' ) ? '<a href="' . get_field( 'blok_2_link' ) . '">' : ''; ?>
 						<div
 							class="werkplek-blok-container" <?= get_field( 'blok_2_afbeelding' ) ? 'style="background-image:url(' . get_field( 'blok_2_afbeelding' ) . ')"' : ''; ?>>
 							<div class="werkplek-blok-inner-container">
@@ -42,8 +45,10 @@ use Roots\Sage\Extras;
 								<?= get_field( 'blok_2_tekst' ) ? '<p class="werkplek-blok-text">' . get_field( 'blok_2_tekst' ) . '</p>' : ''; ?>
 							</div>
 						</div>
+						<?= get_field( 'blok_2_link' ) ? '</a>' : ''; ?>
 					</div>
 					<div class="col-md-4 werkplek-blok werkplek-blok-3">
+						<?= get_field( 'blok_3_link' ) ? '<a href="' . get_field( 'blok_3_link' ) . '">' : ''; ?>
 						<div
 							class="werkplek-blok-container" <?= get_field( 'blok_2_afbeelding' ) ? 'style="background-image:url(' . get_field( 'blok_3_afbeelding' ) . ')"' : ''; ?>>
 							<div class="werkplek-blok-inner-container">
@@ -51,6 +56,7 @@ use Roots\Sage\Extras;
 								<?= get_field( 'blok_3_tekst' ) ? '<p class="werkplek-blok-text">' . get_field( 'blok_3_tekst' ) . '</p>' : ''; ?>
 							</div>
 						</div>
+						<?= get_field( 'blok_3_link' ) ? '</a>' : ''; ?>
 					</div>
 				</div>
 			</div>

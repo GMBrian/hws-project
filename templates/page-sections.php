@@ -159,27 +159,20 @@ if ( have_rows( 'secties' ) ):
 
 		elseif ( get_row_layout() == 'ondernemers' ):
 
+			echo '<div class="section section-' . get_row_layout() . ' full-width-container background-color-' . get_sub_field( 'achtergrondkleur' ) . '">';
+
 			$ondernemers = [ ];
+			$selected    = 0;
 			?>
-			<div class="container-fluid">
-				<div class="row entry-content business-container">
-					<div class="col-sm-12 business-header">
+			<div class="container">
+				<div class="row entry-content section-ondernemers-container">
+					<div class="col-sm-12 section-ondernemers-header">
 						<h2><?= __( 'Worden dit jouw buren?', TEXT_DOMAIN ); ?></h2>
 						<h4><?= __( 'Laat je inspireren door andere ondernemers', TEXT_DOMAIN ); ?></h4>
 					</div>
 					<?php if ( get_sub_field( 'Handmatige selectie' ) ) {
 
 						$ondernemers = get_sub_field( 'ondernemers_selecteren' );
-
-						//print_r( $ondernemers );
-
-						foreach ( $ondernemers as $ondernemer ) {
-							echo '<div class="col-md-2 col-sm-6">';
-
-							echo '<img src="' . get_the_post_thumbnail_url( $ondernemer->ID, 'medium' ) . '">';
-
-							echo '</div>';
-						}
 
 					} else {
 
@@ -191,27 +184,92 @@ if ( have_rows( 'secties' ) ):
 
 						$ondernemers = get_posts( $args );
 
-						//print_r( $ondernemers );
+					} ?>
+
+					<?php if ( $ondernemers && count( $ondernemers ) > 0 ) : ?>
+
+						<?php
+
+						$selected_array = array_rand( $ondernemers, 1 );
+						$selected       = $ondernemers[ $selected_array ]->ID;
 
 						foreach ( $ondernemers as $ondernemer ) {
-							echo '<div class="col-md-2 col-sm-6">';
+							echo '<div class="col-md-2 col-sm-6 section-ondernemers-image">';
+							echo '<a href="#" title="' . $ondernemer->post_title . '" class="section-ondernemers-image-list-' . $ondernemer->ID . ' ' . ( $ondernemer->ID == $selected ? 'selected' : '' ) . '">';
 
 							echo '<img src="' . get_the_post_thumbnail_url( $ondernemer->ID, 'medium' ) . '">';
 
+							echo '</a>';
 							echo '</div>';
 						}
 
-					} ?>
+						?>
 
-					<div class="col-sm-12">
-						<div>
-							<?php foreach ( $ondernemers as $ondernemer ) {
-								echo '<div class="">' . $ondernemer->post_content . '</div>';
-							} ?>
+						<div class="col-sm-12">
+							<div class="section-ondernemers-text-container">
+								<ul class="section-ondernemers-text-list">
+									<?php foreach ( $ondernemers as $ondernemer ) {
+										echo '<li class="section-ondernemers-text-list-' . $ondernemer->ID . ' ' . ( $ondernemer->ID == $selected ? 'selected' : '' ) . '">';
+										echo $ondernemer->post_content;
+										echo get_field( 'naam_vertegenwoordiger', $ondernemer->ID ) ? '<p class="section-ondernemers-title">' . get_field( 'naam_vertegenwoordiger', $ondernemer->ID ) . '</p>' : '';
+										echo get_field( 'functie_vertegenwoordiger', $ondernemer->ID ) ? '<p class="section-ondernemers-subtitle">' . get_field( 'functie_vertegenwoordiger', $ondernemer->ID ) . '</p>' : '';
+										echo '</li>';
+									} ?>
+								</ul>
+							</div>
 						</div>
+
+					<?php endif; ?>
+
+					<a class="btn btn-text section-ondernemers-more"
+					   href="<?= get_post_type_archive_link( 'ondernemers' ); ?>"><?= __( 'Alle ondernemers bekijken', TEXT_DOMAIN ); ?>
+						<i
+							class="fa fa-long-arrow-right"></i></a></a>
+				</div>
+			</div>
+			<?php
+			echo '</div>';
+
+		elseif ( get_row_layout() == '4_blokken' ):
+			?>
+
+			<div class="container">
+				<div class="row entry-content teaser-container">
+					<div class="col-lg-3 col-md-6 col-sm-12 teaser-home">
+						<?= get_sub_field( 'blok_1_afbeelding' ) ? '<a class="" href="' . get_sub_field( 'blok_1_knop_link' ) . '"><img
+								src="'  . get_sub_field( 'blok_1_afbeelding' ) . '"></a>' : ''; ?>
+						<?= get_sub_field( 'blok_1_titel' ) ? '<h3>' . get_sub_field( 'blok_1_titel' ) . '</h3>' : ''; ?>
+						<?= get_sub_field( 'blok_1_tekst' ) ? '<p>' . get_sub_field( 'blok_1_tekst' ) . '</p>' : ''; ?>
+						<?= get_sub_field( 'blok_1_knop_titel' ) ? '<a class="btn btn-text" href="' . get_sub_field( 'blok_1_knop_link' ) . '">' . get_sub_field( 'blok_1_knop_titel' ) . ' <i
+								class="fa fa-long-arrow-right"></i></a>' : ''; ?>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 teaser-home">
+						<?= get_sub_field( 'blok_2_afbeelding' ) ? '<a class="' . get_sub_field( 'blok_2_knop_link' ) . '" href=""><img
+								src="'  . get_sub_field( 'blok_2_afbeelding' ) . '"></a>' : ''; ?>
+						<?= get_sub_field( 'blok_2_titel' ) ? '<h3>' . get_sub_field( 'blok_2_titel' ) . '</h3>' : ''; ?>
+						<?= get_sub_field( 'blok_2_tekst' ) ? '<p>' . get_sub_field( 'blok_2_tekst' ) . '</p>' : ''; ?>
+						<?= get_sub_field( 'blok_2_knop_titel' ) ? '<a class="btn btn-text" href="' . get_sub_field( 'blok_2_knop_link' ) . '">' . get_sub_field( 'blok_2_knop_titel' ) . ' <i
+								class="fa fa-long-arrow-right"></i></a>' : ''; ?>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 teaser-home">
+						<?= get_sub_field( 'blok_3_afbeelding' ) ? '<a class="' . get_sub_field( 'blok_3_knop_link' ) . '" href=""><img
+								src="'  . get_sub_field( 'blok_3_afbeelding' ) . '"></a>' : ''; ?>
+						<?= get_sub_field( 'blok_3_titel' ) ? '<h3>' . get_sub_field( 'blok_3_titel' ) . '</h3>' : ''; ?>
+						<?= get_sub_field( 'blok_3_tekst' ) ? '<p>' . get_sub_field( 'blok_3_tekst' ) . '</p>' : ''; ?>
+						<?= get_sub_field( 'blok_3_knop_titel' ) ? '<a class="btn btn-text" href="' . get_sub_field( 'blok_3_knop_link' ) . '">' . get_sub_field( 'blok_3_knop_titel' ) . ' <i
+								class="fa fa-long-arrow-right"></i></a>' : ''; ?>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 teaser-home">
+						<?= get_sub_field( 'blok_4_afbeelding' ) ? '<a class="' . get_sub_field( 'blok_4_knop_link' ) . '" href=""><img
+								src="'  . get_sub_field( 'blok_4_afbeelding' ) . '"></a>' : ''; ?>
+						<?= get_sub_field( 'blok_4_titel' ) ? '<h3>' . get_sub_field( 'blok_4_titel' ) . '</h3>' : ''; ?>
+						<?= get_sub_field( 'blok_4_tekst' ) ? '<p>' . get_sub_field( 'blok_4_tekst' ) . '</p>' : ''; ?>
+						<?= get_sub_field( 'blok_4_knop_titel' ) ? '<a class="btn btn-text" href="' . get_sub_field( 'blok_4_knop_link' ) . '">' . get_sub_field( 'blok_4_knop_titel' ) . ' <i
+								class="fa fa-long-arrow-right"></i></a>' : ''; ?>
 					</div>
 				</div>
 			</div>
+
 			<?php
 		endif;
 

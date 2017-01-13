@@ -13,6 +13,28 @@
 (function($) {
 
   $(document).ready(function ($) {
+
+    $('.section-ondernemers .section-ondernemers-image a').click(function(e) {
+      e.preventDefault();
+
+      if(!$(this).is('.selected')) {
+
+        $('.section-ondernemers .section-ondernemers-image a.selected').removeClass('selected');
+        $(this).addClass('selected');
+
+        var ondernemerIdClass = $.grep(this.className.split(" "), function(v, i){
+            return v.indexOf('section-ondernemers-image-list-') === 0;
+        }).join();
+
+        var ondernemerId = ondernemerIdClass.match(/\d+/);
+        var string = 'ul.section-ondernemers-text-list .section-ondernemers-text-list-' + ondernemerId;
+
+        $('ul.section-ondernemers-text-list li.selected').removeClass('selected');
+
+        $(string).addClass('selected');
+      }
+    });
+
     $(window).scroll(function () {
 
       var scroll = $(window).scrollTop();

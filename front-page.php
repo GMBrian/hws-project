@@ -1,7 +1,1 @@
-<?php
-/**
- * Template Name: Custom Template
- */
-?>
-
-<?php get_template_part('templates/content', 'front'); ?>
+<?php get_template_part('templates/content', 'front');

@@ -18,6 +18,7 @@
     margin: 0 18px;
     font-weight: 500;
     background: url(../../assets/images/dashed-brand-color.png) repeat-x transparent bottom;
+    text-transform: lowercase;
 
     &:hover {
       color: darken($brand-primary, 5%);
