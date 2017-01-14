@@ -93,6 +93,10 @@ html body .gform_wrapper {
     @extend .input-field;
   }
 
+  h3.gform_title {
+    font-size: 1.75rem;
+  }
+
   li.hidden_label input {
     margin-top: 0;
   }
@@ -125,4 +129,69 @@ html body .gform_wrapper {
   border: 1px solid $brand-primary;
   color: $brand-primary;
   background-color: $brand-light;
+}
+
+.ui-datepicker {
+  background-color: $white;
+
+  .ui-datepicker-header {
+    background-color: $white;
+  }
+
+  .ui-datepicker-prev {
+    position: relative;
+    background-image: none;
+
+    &:before {
+      position: absolute;
+      top: 8px;
+      left: -2px;
+      content: '';
+      color: $text-primary;
+      margin-left: 8px;
+
+      border-top: 6px solid transparent;
+      border-right: 6px solid;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid transparent;
+    }
+  }
+
+  .ui-datepicker-next {
+    position: relative;
+    background-image: none;
+
+    &:before {
+      position: absolute;
+      top: 8px;
+      right: 5px;
+      content: '';
+      color: $text-primary;
+      margin-left: 8px;
+
+      border-top: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid;
+    }
+  }
+
+  .ui-datepicker th {
+    background-color: $white;
+  }
+
+  .ui-datepicker-today a {
+    color: $brand-primary;
+  }
+
+  .ui-datepicker-calendar .ui-state-active {
+    border: 0;
+    border-left: 1px solid #bbb;
+    color: #BB0000;
+  }
+
+  .ui-datepicker-calendar .ui-state-default {
+    background: none;
+    background-color: $white;
+  }
 }

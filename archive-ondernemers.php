@@ -23,7 +23,7 @@ use Roots\Sage\Extras;
 </div>
 
 <div class="container row">
-	<div class="col-md-12 archive-container">
+	<div class="col-lg-9 col-md-12 ondernemers-archive-container justify-content-center">
 		<div class="row">
 			<div class="col-sm-12 ondernemers-header">
 				<h1><?= __( 'Bedrijven werkzaam bij Het Werkstation', TEXT_DOMAIN ); ?></h1>
@@ -31,7 +31,7 @@ use Roots\Sage\Extras;
 			</div>
 
 			<?php while ( have_posts() ) : the_post(); ?>
-				<div class="col-md-2 offset-lg-1 push-lg-1 ondernemers-logo">
+				<div class="col-md-4 ondernemers-logo">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<a href="<?= get_the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 							<img src="<?php the_post_thumbnail_url( 'medium' ); ?>"/>

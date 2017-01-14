@@ -210,6 +210,13 @@ body.page-template-template-contact {
   }
 }
 
+@media screen and (max-width: $container-desktop) {
+
+  body.page-template-template-contact {
+    padding-top: 0;
+  }
+}
+
 .contact-left-section {
   border-right: 1px solid $white;
 }

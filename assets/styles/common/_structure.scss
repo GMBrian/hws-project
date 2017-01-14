@@ -14,10 +14,24 @@ body {
   }
 }
 
+@media screen and (max-width: $container-desktop) {
+
+  body {
+    padding-top: 0;
+  }
+}
+
 body.customize-support {
 
   .navbar {
     margin-top: 32px;
+  }
+}
+
+@media screen and (max-width: $container-desktop) {
+
+  body.customize-support .navbar {
+    margin-top: 0;
   }
 }
 

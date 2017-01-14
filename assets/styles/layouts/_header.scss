@@ -6,6 +6,55 @@
   height: 76px;
   background-color: $white;
   padding: 0;
+
+  //span.caret {
+  //  line-height: 24px;
+  //}
+
+  .dropdown-toggle {
+    &:after {
+      margin-left: 8px;
+      border-top: 6px solid;
+      border-right: 6px solid transparent;
+      border-left: 6px solid transparent;
+    }
+  }
+
+  .dropdown {
+    .dropdown-menu {
+      border: none;
+      width: 100%;
+      margin: 0;
+
+      @include border-radius(0);
+
+      .menu-item {
+        width: 100%;
+      }
+    }
+
+    &:hover .dropdown-menu {
+      display: block;
+    }
+  }
+
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown > .dropdown-menu {
+
+    > li a:before  {
+      content: "- ";
+    }
+
+    > .dropdown > .dropdown-menu {
+      > li a:before {
+        content: "-- ";
+      }
+      > .dropdown > .dropdown-menu {
+        > li a:before {
+          content: "--- ";
+        }
+      }
+    }
+  }
 }
 
 .navbar-brand {
@@ -19,7 +68,7 @@
   float: right;
 }
 
-.nav-main ul.nav li {
+.nav-main ul.nav > li {
   float: left;
 }
 
@@ -35,11 +84,37 @@
   color: $text-primary;
 }
 
+.nav-main ul.nav li.current-page-ancestor > a,
 .nav-main ul.nav li.active a,
 .nav-main ul.nav li a:hover {
   color: $brand-primary;
   text-decoration: none;
 }
+
+@media screen and (max-width: $container-desktop) {
+  .navbar-fixed-top {
+    position: relative;
+  }
+
+  .navbar {
+    height: auto;
+  }
+
+  .nav-main {
+    margin-top: 52px;
+    float: none;
+    background-color: $white;
+    display: block;
+    width: 100%;
+
+    ul.nav > li {
+      float: none;
+    }
+  }
+}
+
+/**
+*/
 
 .archive-header {
   margin: 50px 0 30px;

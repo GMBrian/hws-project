@@ -271,12 +271,33 @@ body.single-post .wrap {
   text-align: center;
 }
 
+.ondernemers-archive-container {
+  margin-bottom: 62px;
+}
+
 .ondernemers-logo {
   text-align: center;
 
+  a {
+    position: relative;
+    height: 90px;
+    display: block;
+    margin: 10px 0;
+  }
+
   img {
-    //width: 100px;
     max-width: 100%;
+    width: auto;
+
+    max-height: 80px;
+    height: auto;
+
     display: inline-block;
+
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin: 0;
   }
 }

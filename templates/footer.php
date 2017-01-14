@@ -28,6 +28,6 @@
 		<p><?= __( '© Alle rechten voorbehouden', TEXT_DOMAIN ); ?> <span
 				class="footer-divider">|</span> <?= __( 'Het Werkstation', TEXT_DOMAIN ); ?> <?= date( 'Y' ); ?>
 			<span class="footer-divider">|</span> <a
-				href="#"><?= __( 'Algemene Voorwaarden', TEXT_DOMAIN ); ?></a></p>
+				href="<?=  get_field( 'algemene_voorwaarden', 'options' ); ?>"><?= __( 'Algemene Voorwaarden', TEXT_DOMAIN ); ?></a></p>
 	</div>
 </footer>

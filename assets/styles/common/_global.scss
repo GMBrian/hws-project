@@ -45,6 +45,11 @@ hr.dotted {
   background: repeat-x url("../../assets/images/dashed-hr.png");
 }
 
+// Bootstrap additions
+.justify-content-center {
+  margin: 0 auto;
+}
+
 // Mixins
 @mixin hide-text {
   font-size: 0;

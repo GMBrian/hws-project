@@ -131,6 +131,8 @@
         display: inline-block;
         filter: grayscale(100%);
         transition: .3s ease-in-out;
+
+        @include border-radius(0);
       }
 
       > a {
