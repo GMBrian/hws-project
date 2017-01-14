@@ -3,7 +3,7 @@
 <div class="container row">
 	<div class="col-lg-9 col-md-12 archive-header">
 		<h1>
-			<?php if( is_archive() ) : ?>
+			<?php if( is_archive() || is_search() || is_404() ) : ?>
 				<?= Titles\title(); ?>
 			<?php else : ?>
 				<?= get_the_title( get_queried_object_id() ); ?>

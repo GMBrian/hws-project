@@ -31,6 +31,8 @@ body.customize-support {
 
 body.blog,
 body.archive,
+body.search,
+body.error404,
 body.single-ondernemers {
   background-color: $footer-background;
 
@@ -50,6 +52,11 @@ body.archive-ondernemers {
 
 img {
   max-width: 100%;
+}
+
+.row-nogap {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 /**

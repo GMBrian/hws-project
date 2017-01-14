@@ -73,7 +73,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
  */
 function widgets_init() {
 	register_sidebar( [
-		'name'          => __( 'Blog', 'sage' ),
+		'name'          => __( 'Blog', TEXT_DOMAIN ),
 		'id'            => 'sidebar-primary',
 		'before_widget' => '<section class="widget %1$s %2$s">',
 		'after_widget'  => '</section>',
@@ -81,7 +81,7 @@ function widgets_init() {
 		'after_title'   => '</h3>'
 	] );
 	register_sidebar( [
-		'name'          => __( 'Blog Single', 'sage' ),
+		'name'          => __( 'Blog Single', TEXT_DOMAIN ),
 		'id'            => 'sidebar-post-single',
 		'before_widget' => '<section class="widget %1$s %2$s">',
 		'after_widget'  => '</section>',
@@ -89,7 +89,7 @@ function widgets_init() {
 		'after_title'   => '</h3>'
 	] );
 	register_sidebar( [
-		'name'          => __( 'Footer 1', 'sage' ),
+		'name'          => __( 'Footer 1', TEXT_DOMAIN ),
 		'id'            => 'footer-1',
 		'before_widget' => '<section class="widget %1$s %2$s">',
 		'after_widget'  => '</section>',
@@ -97,7 +97,7 @@ function widgets_init() {
 		'after_title'   => '</h3>'
 	] );
 	register_sidebar( [
-		'name'          => __( 'Footer 2', 'sage' ),
+		'name'          => __( 'Footer 2', TEXT_DOMAIN ),
 		'id'            => 'footer-2',
 		'before_widget' => '<section class="widget %1$s %2$s">',
 		'after_widget'  => '</section>',
@@ -105,7 +105,7 @@ function widgets_init() {
 		'after_title'   => '</h3>'
 	] );
 	register_sidebar( [
-		'name'          => __( 'Footer 3', 'sage' ),
+		'name'          => __( 'Footer 3', TEXT_DOMAIN ),
 		'id'            => 'footer-3',
 		'before_widget' => '<section class="widget %1$s %2$s">',
 		'after_widget'  => '</section>',
@@ -125,7 +125,6 @@ function display_sidebar() {
 	isset( $display ) || $display = ! in_array( true, [
 		// The sidebar will NOT be displayed if ANY of the following return true.
 		// @link https://codex.wordpress.org/Conditional_Tags
-		is_404(),
 		is_front_page(),
 		is_page()
 	] );

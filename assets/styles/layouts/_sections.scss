@@ -130,6 +130,7 @@
         margin: 20px auto;
         display: inline-block;
         filter: grayscale(100%);
+        transition: .3s ease-in-out;
       }
 
       > a {
@@ -153,6 +154,11 @@
       }
 
       > a.selected {
+
+        img {
+          filter: none;
+          transition: .3s ease-in-out;
+        }
 
         &:before {
           bottom: -10px;

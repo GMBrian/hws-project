@@ -2,10 +2,10 @@
 	<div class="footer-follow">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-6 col-sm-8">
+				<div class="col-lg-5 col-md-6 col-sm-8">
 					<p class="follow-us"><?= __( 'Volg ons of deel deze pagina', TEXT_DOMAIN ); ?> <i class="fa fa-long-arrow-right"></i></p>
 				</div>
-				<div class="col-lg-4 col-md-6 col-sm-4">
+				<div class="col-lg-3 col-md-6 col-sm-4">
 					<?php get_template_part('templates/footer-social-share'); ?>
 				</div>
 			</div>

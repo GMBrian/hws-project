@@ -15,7 +15,7 @@ function title() {
 	} elseif ( is_archive() ) {
 		return get_the_archive_title();
 	} elseif ( is_search() ) {
-		return sprintf( __( 'Zoekresultaten voor %s', TEXT_DOMAIN ), get_search_query() );
+		return sprintf( __( 'Zoekresultaten voor "%s"', TEXT_DOMAIN ), get_search_query() );
 	} elseif ( is_404() ) {
 		return __( 'Niet gevonden', TEXT_DOMAIN );
 	} else {

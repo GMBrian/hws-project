@@ -1,14 +1,32 @@
-<?php get_template_part('templates/header', 'page'); ?>
+<?php
 
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
+use Roots\Sage\Setup;
+use Roots\Sage\Wrapper;
+use Roots\Sage\Extras;
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', 'search'); ?>
-<?php endwhile; ?>
+?>
 
-<?php the_posts_navigation(); ?>
+<?php get_template_part( 'templates/header-archive' ); ?>
+
+<div class="container row">
+	<div class="col-md-9 archive-container">
+
+		<?php while ( have_posts() ) : the_post(); ?>
+
+			<?php get_template_part('templates/content', 'search'); ?>
+
+		<?php endwhile; ?>
+
+		<?php the_posts_navigation(); ?>
+
+	</div>
+
+	<aside class="sidebar col-md-3">
+
+		<?php if ( Setup\display_sidebar() ) : ?>
+			<?php include Wrapper\sidebar_path(); ?>
+		<?php endif; ?>
+
+	</aside>
+
+</div>
