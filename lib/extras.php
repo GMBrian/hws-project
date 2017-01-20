@@ -69,22 +69,6 @@ function gm_modify_num_posts_for_ondernemers( $query ) {
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\gm_modify_num_posts_for_ondernemers' );
 
 /**
- * Disable all comments
- */
-// Disable support for comments and trackbacks in post types
-function gm_disable_comments_post_types_support() {
-	$post_types = get_post_types();
-	foreach ( $post_types as $post_type ) {
-		if ( post_type_supports( $post_type, 'comments' ) ) {
-			remove_post_type_support( $post_type, 'comments' );
-			remove_post_type_support( $post_type, 'trackbacks' );
-		}
-	}
-}
-
-add_action( 'admin_init', __NAMESPACE__ . '\\gm_disable_comments_post_types_support' );
-
-/**
  * Haal een afbeelding op voor de banner
  */
 function get_banner_image() {
@@ -103,9 +87,21 @@ function get_banner_image() {
 
 
 /**
- * Haal een afbeelding op voor de banner
+ * Disable all comments
  * ------------------------------------------------------------------------------
  */
+// Disable support for comments and trackbacks in post types
+function gm_disable_comments_post_types_support() {
+	$post_types = get_post_types();
+	foreach ( $post_types as $post_type ) {
+		if ( post_type_supports( $post_type, 'comments' ) ) {
+			remove_post_type_support( $post_type, 'comments' );
+			remove_post_type_support( $post_type, 'trackbacks' );
+		}
+	}
+}
+add_action( 'admin_init', __NAMESPACE__ . '\\gm_disable_comments_post_types_support' );
+
 // Close comments on the front-end
 function gm_disable_comments_status() {
 	return false;

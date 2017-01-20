@@ -14,6 +14,10 @@
 
   $(document).ready(function ($) {
 
+    $('.navbar-toggle').click(function() {
+      $('.navbar').toggleClass('toggled-menu');
+    });
+
     $('.section-ondernemers .section-ondernemers-image a').click(function(e) {
       e.preventDefault();
 

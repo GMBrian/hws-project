@@ -2,6 +2,22 @@
  * Styling for the header and navbar
  */
 
+.navbar-toggle {
+  display: none;
+  width: 55px;
+  height: 55px;
+  background-color: $text-primary;
+  border: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  .fa {
+    font-size: 37px;
+    color: $white;
+  }
+}
+
 .navbar {
   height: 76px;
   background-color: $white;
@@ -91,24 +107,88 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: $container-desktop) {
+@media screen and (max-width: $container-desktop - $sidebar-sm-columns) {
   .navbar-fixed-top {
     position: relative;
   }
 
+  .navbar-toggle {
+    display: block;
+  }
+
+  html body,
+  html body.page.home {
+    .navbar {
+
+      &.toggled-menu {
+        height: auto;
+        max-height: none;
+        transition: max-height 1s linear;
+
+        .navbar-nav {
+          display: block !important;
+        }
+      }
+    }
+  }
   .navbar {
-    height: auto;
+    //height: 82px;
+    max-height: 82px;
+    overflow: hidden;
+    transition: max-height 1s linear;
+
+    .navbar-nav {
+      display: none !important;
+    }
   }
 
   .nav-main {
-    margin-top: 52px;
+    padding-top: 52px;
     float: none;
     background-color: $white;
     display: block;
     width: 100%;
+    text-align: center;
 
     ul.nav > li {
       float: none;
+    }
+  }
+
+  .dropdown-menu {
+    text-align: center;
+    display: block;
+    position: relative;
+    padding: 0;
+    float: none;
+  }
+
+  .navbar-nav > .dropdown > .dropdown-menu > {
+    > li a:before  {
+      content: "- ";
+    }
+
+    .dropdown > .dropdown-menu {
+      > li a:before  {
+        content: "-- ";
+      }
+
+      > .dropdown > .dropdown-menu {
+        > li a:before {
+          content: "--- ";
+        }
+        > .dropdown > .dropdown-menu {
+          > li a:before {
+            content: "---- ";
+          }
+        }
+      }
+    }
+  }
+
+  body.customize-support {
+    .nav-main {
+      padding-top: 76px;
     }
   }
 }

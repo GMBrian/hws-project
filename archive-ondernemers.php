@@ -6,8 +6,6 @@ use Roots\Sage\Extras;
 
 ?>
 
-<?php get_template_part( 'templates/navbar' ); ?>
-
 <div class="full-width-banner"
      style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/images/banner-ondernemers.jpg'; ?>);">
 	<div class="container row">
@@ -23,8 +21,8 @@ use Roots\Sage\Extras;
 </div>
 
 <div class="container row">
-	<div class="col-lg-9 col-md-12 ondernemers-archive-container justify-content-center">
-		<div class="row">
+	<div class="col-lg-9 col-md-12  justify-content-center">
+		<div class="row">ondernemers-archive-container
 			<div class="col-sm-12 ondernemers-header">
 				<h1><?= __( 'Bedrijven werkzaam bij Het Werkstation', TEXT_DOMAIN ); ?></h1>
 				<h4><?= __( 'Laat je inspireren door andere ondernemers', TEXT_DOMAIN ); ?></h4>

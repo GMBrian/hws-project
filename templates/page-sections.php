@@ -10,7 +10,7 @@ if ( have_rows( 'secties' ) ):
 			echo '<div class="section section-' . get_row_layout() . ' full-width-container background-color-' . get_sub_field( 'achtergrondkleur' ) . '">';
 			echo '<div class="container">';
 			echo '<div class="row">';
-			echo '<div class="col-md-12">';
+			echo '<div class="col-lg-8 push-lg-2 col-md-12">';
 
 			echo get_sub_field( 'tekst' );
 
@@ -71,6 +71,8 @@ if ( have_rows( 'secties' ) ):
 
 			echo '<div class="section section-' . get_row_layout() . ' full-width-container background-tint-' . get_sub_field( 'tint' ) . '" style="background-image:url(' . $background_image . ')">';
 			echo '<div class="container">';
+            echo '<div class="row">';
+			echo '<div class="col-lg-8 push-lg-2"';
 			echo '<div class="cta-container">';
 
 			echo '<h3 class="cta-header">' . get_sub_field( 'tekst' ) . '</h3>';
@@ -79,6 +81,8 @@ if ( have_rows( 'secties' ) ):
 				echo '<a class="btn cta-btn" href="' . get_sub_field( 'knop_bestemming' ) . '">' . get_sub_field( 'knop_tekst' ) . ' <i class="fa fa-long-arrow-right"></i></a>';
 			}
 
+			echo '</div>';
+			echo '</div>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';
