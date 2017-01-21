@@ -6,8 +6,6 @@ use Roots\Sage\Extras;
 
 ?>
 
-<?php get_template_part( 'templates/navbar' ); ?>
-
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class(); ?>>
 		<div class="full-width section section-socket">
@@ -26,7 +24,7 @@ use Roots\Sage\Extras;
 						<?= get_the_content(); ?>
 					</div>
 					<div class="col-md-4 werkplek-blok werkplek-blok-1">
-						<?= get_field( 'blok_1_link' ) ? '<a href="' . get_field( 'blok_1_link' ) . '">' : ''; ?>
+						<?= get_field( 'blok_1_link' ) ? '<a href="' . get_field( 'blok_1_link' ) . '">' : '<a>'; ?>
 						<div
 							class="werkplek-blok-container" <?= get_field( 'blok_1_afbeelding' ) ? 'style="background-image:url(' . get_field( 'blok_1_afbeelding' ) . ')"' : ''; ?>>
 							<div class="werkplek-blok-inner-container">
@@ -34,10 +32,10 @@ use Roots\Sage\Extras;
 								<?= get_field( 'blok_1_tekst' ) ? '<p class="werkplek-blok-text">' . get_field( 'blok_1_tekst' ) . '</p>' : ''; ?>
 							</div>
 						</div>
-						<?= get_field( 'blok_1_link' ) ? '</a>' : ''; ?>
+						<?= get_field( 'blok_1_link' ) ? '</a>' : '</a>'; ?>
 					</div>
 					<div class="col-md-4 werkplek-blok werkplek-blok-2">
-						<?= get_field( 'blok_2_link' ) ? '<a href="' . get_field( 'blok_2_link' ) . '">' : ''; ?>
+						<?= get_field( 'blok_2_link' ) ? '<a href="' . get_field( 'blok_2_link' ) . '">' : '<a>'; ?>
 						<div
 							class="werkplek-blok-container" <?= get_field( 'blok_2_afbeelding' ) ? 'style="background-image:url(' . get_field( 'blok_2_afbeelding' ) . ')"' : ''; ?>>
 							<div class="werkplek-blok-inner-container">
@@ -45,10 +43,10 @@ use Roots\Sage\Extras;
 								<?= get_field( 'blok_2_tekst' ) ? '<p class="werkplek-blok-text">' . get_field( 'blok_2_tekst' ) . '</p>' : ''; ?>
 							</div>
 						</div>
-						<?= get_field( 'blok_2_link' ) ? '</a>' : ''; ?>
+						<?= get_field( 'blok_2_link' ) ? '</a>' : '</a>'; ?>
 					</div>
 					<div class="col-md-4 werkplek-blok werkplek-blok-3">
-						<?= get_field( 'blok_3_link' ) ? '<a href="' . get_field( 'blok_3_link' ) . '">' : ''; ?>
+						<?= get_field( 'blok_3_link' ) ? '<a href="' . get_field( 'blok_3_link' ) . '">' : '<a>'; ?>
 						<div
 							class="werkplek-blok-container" <?= get_field( 'blok_2_afbeelding' ) ? 'style="background-image:url(' . get_field( 'blok_3_afbeelding' ) . ')"' : ''; ?>>
 							<div class="werkplek-blok-inner-container">
@@ -56,7 +54,7 @@ use Roots\Sage\Extras;
 								<?= get_field( 'blok_3_tekst' ) ? '<p class="werkplek-blok-text">' . get_field( 'blok_3_tekst' ) . '</p>' : ''; ?>
 							</div>
 						</div>
-						<?= get_field( 'blok_3_link' ) ? '</a>' : ''; ?>
+						<?= get_field( 'blok_3_link' ) ? '</a>' : '</a>'; ?>
 					</div>
 				</div>
 			</div>

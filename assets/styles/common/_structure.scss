@@ -14,7 +14,7 @@ body {
   }
 }
 
-@media screen and (max-width: $container-desktop - $sidebar-sm-columns) {
+@media screen and (max-width: $responsive-md) {
 
   body {
     padding-top: 0;
@@ -28,7 +28,7 @@ body.customize-support {
   }
 }
 
-@media screen and (max-width: $container-desktop - $sidebar-sm-columns) {
+@media screen and (max-width: $responsive-md) {
 
   body.customize-support .navbar {
     margin-top: 0;

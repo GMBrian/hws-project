@@ -9,7 +9,7 @@ use Roots\Sage\Extras;
 <?php get_template_part( 'templates/header-archive' ); ?>
 
 <div class="container row">
-	<div class="col-md-9 archive-container">
+	<div class="col-md-9 col-sm-12 archive-container">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -21,7 +21,7 @@ use Roots\Sage\Extras;
 
 	</div>
 
-	<aside class="sidebar col-md-3">
+	<aside class="sidebar col-md-3 col-sm-12">
 
 		<?php if ( Setup\display_sidebar() ) : ?>
 			<?php include Wrapper\sidebar_path(); ?>

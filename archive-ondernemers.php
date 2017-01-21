@@ -7,14 +7,13 @@ use Roots\Sage\Extras;
 ?>
 
 <div class="full-width-banner"
-     style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/images/banner-ondernemers.jpg'; ?>);">
-	<div class="container row">
-		<div class="col-md-5 offset-md-6 ondernemer-banner-hero-container">
+     style="background-image: url(<?= get_field( 'achtergrondafbeelding', 'options' ); ?>);">
+	<div class="container">
+		<div class="col-lg-7 offset-lg-4 col-md-9 offset-md-2 ondernemer-banner-hero-container">
 			<div class="ondernemer-banner-hero">
-				<p class="ondernemer-type"><?= __('Flexwerker', TEXT_DOMAIN ); ?></p>
-				<h3 class="ondernemer-quote"><?= __('"Het werkstation is voor
-					mij de ideale werkplek"', TEXT_DOMAIN ); ?></h3>
-				<p class="ondernemer-function"><?= __('Lisanna Dekkers | Dekkers meubels', TEXT_DOMAIN ); ?></p>
+				<p class="ondernemer-type"><?= get_field( 'boven_quote', 'options' ); ?></p>
+				<h3 class="ondernemer-quote"><?= get_field( 'quote', 'options' ); ?></h3>
+				<p class="ondernemer-function"><?= get_field( 'functie_onder_quote', 'options' ); ?></p>
 			</div>
 		</div>
 	</div>
@@ -22,7 +21,7 @@ use Roots\Sage\Extras;
 
 <div class="container row">
 	<div class="col-lg-9 col-md-12  justify-content-center">
-		<div class="row">ondernemers-archive-container
+		<div class="row ondernemers-logos-container">
 			<div class="col-sm-12 ondernemers-header">
 				<h1><?= __( 'Bedrijven werkzaam bij Het Werkstation', TEXT_DOMAIN ); ?></h1>
 				<h4><?= __( 'Laat je inspireren door andere ondernemers', TEXT_DOMAIN ); ?></h4>

@@ -28,6 +28,7 @@
     position: relative;
 
     &:before {
+      pointer-events: none;
       content: '';
       position: absolute;
       z-index: 100;
@@ -38,6 +39,20 @@
       display: block;
       background-image: url(../../assets/images/ic-train.png);
     }
+  }
+}
+
+
+@media (max-width: $responsive-md) {
+  .footer-follow .container:before {
+    right: 20px;
+  }
+  .footer-follow {
+    height: auto;
+  }
+  .footer-follow .follow-us {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -101,6 +116,21 @@
 
   iframe {
     border: 1px solid #cbcac6 !important;
+  }
+}
+
+@media (max-width: $responsive-md) {
+  .footer-info p {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .footer-info ul li a {
+    font-size: 17px;
+    line-height: 38px;
+  }
+  .footer-info iframe {
+    width: 100%;
   }
 }
 

@@ -72,7 +72,7 @@ if ( have_rows( 'secties' ) ):
 			echo '<div class="section section-' . get_row_layout() . ' full-width-container background-tint-' . get_sub_field( 'tint' ) . '" style="background-image:url(' . $background_image . ')">';
 			echo '<div class="container">';
             echo '<div class="row">';
-			echo '<div class="col-lg-8 push-lg-2"';
+			echo '<div class="col-lg-8 push-lg-2 push-md-0 col-md-12"';
 			echo '<div class="cta-container">';
 
 			echo '<h3 class="cta-header">' . get_sub_field( 'tekst' ) . '</h3>';
@@ -100,7 +100,7 @@ if ( have_rows( 'secties' ) ):
 
 				while ( have_rows( 'opties' ) ) : the_row();
 
-					echo '<div class="' . ( $flex_counter == 0 ? 'offset-lg-1' : '' ) . ' col-lg-2 col-md-12 col-sm-12 flexwerk-optie">';
+					echo '<div class="' . ( $flex_counter == 0 ? 'offset-lg-1' : '' ) . ' col-lg-2 ' . ( $flex_counter == 3 ? 'offset-lg-0 offset-md-2' : '' ) . ' col-md-4 ' . ( $flex_counter == 4 ? 'offset-lg-0 offset-md-0 offset-sm-3' : '' ) . ' col-sm-6 flexwerk-optie">';
 					?>
 					<img class="flexwerk-icon"
 					     src="<?= get_stylesheet_directory_uri() . '/assets/images/ticket-' . get_sub_field( 'icoon' ) . '.png'; ?>">
@@ -198,7 +198,7 @@ if ( have_rows( 'secties' ) ):
 						$selected       = $ondernemers[ $selected_array ]->ID;
 
 						foreach ( $ondernemers as $ondernemer ) {
-							echo '<div class="col-md-2 col-sm-6 section-ondernemers-image">';
+							echo '<div class="col-md-2 section-ondernemers-image">';
 							echo '<a href="#" title="' . $ondernemer->post_title . '" class="section-ondernemers-image-list-' . $ondernemer->ID . ' ' . ( $ondernemer->ID == $selected ? 'selected' : '' ) . '">';
 
 							echo '<img src="' . get_the_post_thumbnail_url( $ondernemer->ID, 'medium' ) . '">';

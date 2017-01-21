@@ -53,6 +53,14 @@ body.single-post .wrap {
   }
 }
 
+@media screen and (max-width: 991px) {
+  .post-banner.inverse .entry-meta,
+  .post-banner.inverse .entry-meta a,
+  .post-banner.inverse .entry-title {
+    padding: 0;
+  }
+}
+
 .social-share-container {
   position: relative;
   z-index: 10;
@@ -134,7 +142,32 @@ body.single-post .wrap {
     margin: 20px 0;
 
     li {
+      display: block;
     }
+  }
+}
+
+.ondernemers-post-section-left {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.ondernemers-logos-container {
+  margin-bottom: 50px;
+}
+
+.ondernemers-container ul.social-share {
+  margin-left: -20px;
+  margin-right: -20px;
+
+  li {
+    display: inline-block;
+    height: auto;
+    width: auto;
+    margin: 5px auto;
+    padding: 0 15px;
   }
 }
 
@@ -277,6 +310,8 @@ body.single-post .wrap {
 
 .ondernemers-logo {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
   a {
     position: relative;

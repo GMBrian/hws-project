@@ -16,6 +16,13 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 	) );
 }
 
+//function insert_jquery(){
+//	wp_deregister_script( 'jquery' );
+//	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.10.2', false );
+//
+//}
+//add_filter('wp_enqueue_scripts','insert_jquery', 1);
+
 /**
  * Theme setup
  */
@@ -25,7 +32,7 @@ function setup() {
 	add_theme_support( 'soil-clean-up' );
 	add_theme_support( 'soil-nav-walker' );
 	add_theme_support( 'soil-nice-search' );
-	add_theme_support( 'soil-jquery-cdn' );
+	//add_theme_support( 'soil-jquery-cdn' );
 	add_theme_support( 'soil-relative-urls' );
 
 	// Make theme available for translation
@@ -167,6 +174,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100 );
 function my_acf_init() {
 	acf_update_setting( 'google_api_key', 'AIzaSyDj-rTjsnhC5RLxK9Arf9vRafzaNr7o-x0' );
 }
+
 add_action( 'acf/init', __NAMESPACE__ . '\\my_acf_init' );
 
 // Enable visibility option for labels in Gravity Forms

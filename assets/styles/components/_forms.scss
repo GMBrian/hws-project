@@ -93,6 +93,11 @@ html body .gform_wrapper {
     @extend .input-field;
   }
 
+  input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
+    line-height: inherit;
+    min-height: inherit;
+  }
+
   h3.gform_title {
     font-size: 1.75rem;
   }

@@ -50,7 +50,6 @@
       }
     });
 
-
     // Instantiate the Bootstrap carousel
     // $('#theCarousel').carousel({
     //   interval: 1000

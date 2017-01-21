@@ -80,6 +80,13 @@
   font-size: 0;
 }
 
+@media screen and (max-width: 991px) {
+
+  .navbar-brand {
+    margin-right: 55px;
+  }
+}
+
 .nav-main {
   float: right;
 }
@@ -107,7 +114,14 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: $container-desktop - $sidebar-sm-columns) {
+@media screen and (min-width: $responsive-md) and (max-width: $container-max-widths) {
+  .nav-main ul.nav li a {
+    padding: 26px 7px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $responsive-md) {
   .navbar-fixed-top {
     position: relative;
   }
@@ -143,7 +157,7 @@
   }
 
   .nav-main {
-    padding-top: 52px;
+    padding-top: 82px;
     float: none;
     background-color: $white;
     display: block;

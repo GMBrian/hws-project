@@ -103,7 +103,7 @@ class StayInTouch_Widget extends WP_Widget {
 		echo get_field( 'facebook_url', 'options' ) ? '<li class="social-facebook"><a href="' .  get_field( 'facebook_url', 'options' ) . '" title="' . __( 'Deel op Facebook', TEXT_DOMAIN ) . '">' . __( 'Deel op Facebook', TEXT_DOMAIN ) . '</a></li>' : '';
 		echo get_field( 'twitter_url', 'options' ) ? '<li class="social-twitter"><a href="' .  get_field( 'twitter_url', 'options' ) . '" title="' . __( 'Deel op Twitter', TEXT_DOMAIN ) . '">' . __( 'Deel op Twitter', TEXT_DOMAIN ) . '</a></li>' : '';
 		echo get_field( 'linkedin_url', 'options' ) ? '<li class="social-linkedin"><a href="' .  get_field( 'linkedin_url', 'options' ) . '" title="' . __( 'Deel op LinkedIn', TEXT_DOMAIN ) . '">' . __( 'Deel op LinkedIn', TEXT_DOMAIN ) . '</a></li>' : '';
-		echo get_field( 'instagram_url', 'options' ) ? '<li class="social-instagram"><a href="' .  get_field( 'instagram_url', 'options' ) . '" title="' . __( 'Deel op Instagram', TEXT_DOMAIN ) . '">' . __( 'Deel op Instagram', TEXT_DOMAIN ) . '</a></li>' : '';
+		//echo get_field( 'instagram_url', 'options' ) ? '<li class="social-instagram"><a href="' .  get_field( 'instagram_url', 'options' ) . '" title="' . __( 'Deel op Instagram', TEXT_DOMAIN ) . '">' . __( 'Deel op Instagram', TEXT_DOMAIN ) . '</a></li>' : '';
 
 		echo '</ul>';
 

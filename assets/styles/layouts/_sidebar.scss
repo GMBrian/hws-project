@@ -40,3 +40,9 @@
     }
   }
 }
+
+@media (max-width: $container-max-widths) {
+  .sidebar .widget h3 {
+    font-size: 22px;
+  }
+}
